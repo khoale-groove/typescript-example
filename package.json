@@ -1,0 +1,25 @@
+{
+  "name": "typescript-example",
+  "version": "1.0.0",
+  "description": "groove",
+  "main": "index.js",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "typescript": "4.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khoale-groove/typescript-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khoale-groove/typescript-example/issues"
+  },
+  "homepage": "https://github.com/khoale-groove/typescript-example#readme"
+}
