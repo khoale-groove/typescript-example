@@ -1,6 +1,6 @@
 // ./advanced/class.ts
 
-type SexType = "boy" | "girl" | "other";
+type SexType = 'boy' | 'girl' | 'other';
 
 class User {
   name: string;
@@ -20,7 +20,7 @@ class User {
  */
 export function contructors() {
   class Admin extends User {}
-  const admin = new Admin("ADMIN", "boy");
+  const admin = new Admin('ADMIN', 'boy');
   admin.name; // => "ADMIN"
   console.log(admin.name);
 }
@@ -29,8 +29,8 @@ export function contructors() {
  * 2. Readonly
  */
 export function readonly() {
-  const user = new User("userName", "boy");
-  user.name = "otherName";
+  const user = new User('userName', 'boy');
+  user.name = 'otherName';
   user.name; // => "otherName"
   console.log(user.name);
   // user.age = 30;
@@ -40,7 +40,7 @@ export function readonly() {
  * 3. methods
  */
 export function updateBirthday() {
-  const user = new User("userName", "girl");
+  const user = new User('userName', 'girl');
   user.updateBirthday(new Date(2000));
 }
 /**
@@ -51,7 +51,7 @@ export function updateBirthday() {
 export function getSetMethods() {
   class Boy extends User {
     constructor(name: string) {
-      super(name, "boy");
+      super(name, 'boy');
     }
 
     get birthday() {
@@ -64,7 +64,7 @@ export function getSetMethods() {
     }
     updateBirthday() {}
   }
-  const man = new Boy("Nam");
+  const man = new Boy('Nam');
   man.birthday = new Date(2002);
 }
 
@@ -81,10 +81,10 @@ export function memberVisibility() {
     private lastName: string;
     protected middleName: string;
     constructor(name: string) {
-      super(name, "boy");
-      this.firstName = "A";
-      this.lastName = "B";
-      this.middleName = "C";
+      super(name, 'boy');
+      this.firstName = 'A';
+      this.lastName = 'B';
+      this.middleName = 'C';
     }
   }
 
@@ -95,8 +95,8 @@ export function memberVisibility() {
       // return this.middleName
     }
   }
-  const teen = new Teenager("Nam");
-  // teen.firstName
+  const teen = new Teenager('Nam');
+  teen.firstName;
   // teen.lastName
   // teen.middleName
 }
@@ -115,13 +115,10 @@ export function genericClasses() {
     }
   }
 
-  const helloText = new Getting("hello world");
-  const helloArray = new Getting(["hello", "world"]);
-  const helloObject = new Getting({ hello: "world" });
+  const helloText = new Getting('hello world');
+  const helloArray = new Getting(['hello', 'world']);
+  const helloObject = new Getting({ hello: 'world' });
   helloText.printText();
   helloArray.printText();
   helloObject.printText();
 }
-
-
-
