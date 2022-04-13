@@ -7,3 +7,4 @@ isDone = false;
 let width: number;
 width = "5";
 width = 10;
+
