@@ -1,1 +1,1 @@
-export * as demoClass from "./class";
+export * as basicDemo from "./basic-types";

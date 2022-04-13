@@ -7,9 +7,10 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --noEmit index.ts",
     "type-check:watch": "npm run type-check --watch",
-    "start": "babel-node -x \".ts\" index.ts"
+    "start": "babel-node -x \".ts\" index.ts",
+    "tsc": "tsc"
   },
   "dependencies": {
     "ts-node": "^10.7.0"
