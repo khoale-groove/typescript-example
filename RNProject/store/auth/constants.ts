@@ -1,0 +1,5 @@
+export const USER_LOGOUT = 'AUTH/USER_LOGOUT';
+export const USER_REGISTER = 'AUTH/USER_REGISTER';
+
+export const USER_LOGIN = 'AUTH/USER_LOGIN';
+export const SET_USER_INFO = 'AUTH/SET_USER_INFO';
