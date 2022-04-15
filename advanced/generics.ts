@@ -28,19 +28,6 @@ export function basic() {
 
 // 2. Generic Interfaces and Classes
 
-export function interfaceAndClass() {
-  interface MyInterface<T> {
-    field: T;
-  }
-
-  class MyClass<T> {
-    field: T;
-    constructor(field: T) {
-      this.field = field;
-    }
-  }
-}
-
 // 3. Generic constraints
 
 type PartialType<T> = {

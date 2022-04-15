@@ -105,6 +105,7 @@ export function memberVisibility() {
  * 6. Generic Classes
  */
 export function genericClasses() {
+  //
   class Getting<Type> {
     content: Type;
     constructor(value: Type) {

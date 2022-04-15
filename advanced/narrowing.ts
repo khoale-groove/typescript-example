@@ -6,19 +6,24 @@ export type Animal = {
   canDoSomething: false;
 };
 
-function addLeg(animal: Animal) {
-  // animal.legs = animal.legs + 1;
+// conditional logic
+
+function addLeg(animal: Animal): Animal {
+  if (animal.legs === undefined) {
+    return animal;
+  }
+  animal.legs = animal.legs + 1;
+  return animal;
 }
-
-
 
 /**
  * 1. typeof
  */
-function anotherMethodAddLeg(animal: Animal) {
+function anotherMethodAddLeg(animal: Animal): Animal {
   if (typeof animal.legs === 'number') {
     animal.legs = animal.legs + 1;
   }
+  return animal;
 }
 
 /**
@@ -34,7 +39,7 @@ type Person = {
 function addLeg1(thing: Person | Animal) {
   if ('firstName' in thing) {
     thing.legs = 2;
-    thing.firstName = 'name'
+    thing.firstName = 'name';
   }
 }
 
