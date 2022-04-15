@@ -1,6 +1,6 @@
 //
 // 1. basic
-function basic() {
+() => {
   //
   function getFirstElement(arr: string[]): string {
     return arr[0];
@@ -24,16 +24,35 @@ function basic() {
   function getFirstElementGeneric<T>(arr: T[]): T {
     return arr[0];
   }
+};
 
-  // parameter in generic constraints
-  function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
-    return obj[key];
+// 2. Generic Interfaces and Classes
+
+() => {
+  interface MyInterface<T> {
+    field: T;
   }
-  let x = { a: 1, b: 2, c: 3, d: 4 };
-  getProperty(x, 'a');
-//   getProperty(x, 'm');
+
+  class MyClass<T> {
+    field: T;
+    constructor(field: T) {
+      this.field = field;
+    }
+  }
+};
+
+// 3. Generic constraints
+
+type PartialType<T> = {
+  [P in keyof T]?: T[P];
+};
+
+function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
+  return obj[key];
 }
 
-//  chi su dung generic khi
-//  - du lieu can linh hoat (nhieu type)
-//  - output lien quan input
+let x = { a: 1, b: 2, c: 3, d: 4 };
+getProperty(x, 'a');
+//   getProperty(x, 'm');
+
+let y: PartialType<typeof x> = { c: 4, d: 3 };

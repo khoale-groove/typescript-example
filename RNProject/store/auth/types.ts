@@ -27,3 +27,7 @@ export interface AuthState {
   user: any;
   accessToken: string;
 }
+
+export interface IAuthModuleState {
+  auth: AuthState;
+}

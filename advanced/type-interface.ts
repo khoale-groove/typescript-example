@@ -33,19 +33,53 @@ export function defineInterfaces() {
     x: number;
     y: number;
   }
+  const pointA: location = {
+    x: 1,
+    y: 1,
+  };
+}
+
+// Differences Between Type Aliases and Interfaces
+
+//  Extending via intersections
+() => {
+  type animal = {
+    name: string;
+  };
+  type pet = animal & { speed: number };
+  const cat: pet = {
+    name: 'cat',
+    speed: 1,
+  };
+};
+// Extending
+{
+  interface animal {
+    name: string;
+  }
+  interface pet extends animal {
+    speed: number;
+  }
+  const cat: pet = {
+    name: 'cat',
+    speed: 1,
+  };
+}
+
+// Adding new fields to an existing interface
+{
+  interface location {
+    x: number;
+    y: number;
+  }
 
   interface location {
-    // x: string;
     dx: number;
     dy?: number;
   }
-
-  const pointA: location = {
+  const newLocation: location = {
     x: 1,
     y: 1,
     dx: 1,
   };
 }
-
-// Differences Between Type Aliases and Interfaces
-// https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces
