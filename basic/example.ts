@@ -53,7 +53,7 @@ function takesCallback(cb: (error: Error) => any) {
   return cb(new Error('Boom!'));
 }
 
-takesCallback(function(err) {
+takesCallback(function (err) {
   console.log(err.message);
 });
 
@@ -180,7 +180,7 @@ class Foo {
   bar: string;
 }
 
-function create<T>(Clazz: { new (): T }): T {
+function create<T>(Clazz: { new(): T }): T {
   return new Clazz();
 }
 
@@ -188,7 +188,7 @@ const result = create(Foo);
 
 // `this`.
 class Calculator {
-  constructor(protected value: number = 0) {}
+  constructor(protected value: number = 0) { }
 
   result(): number {
     return this.value;
@@ -205,6 +205,70 @@ class Calculator {
   }
 }
 
+const x = new Calculator(10)
+  .add(5)
+  .result()
+//function types
+function sum(a: number, b: number) {
+  return a + b;
+}
+// ts: function sum(a: number, b: number): number
+function sum(a: number, b: number): number {
+  return a + b.toString();
+}
+
+function createStudent(id: number, name: string, age: number) {
+  console.log(id, name, age)
+}
+createStudent(1, 'Bob', 18);
+interface Student {
+  id: number;
+  name: string;
+  age: number;
+}
+function createStudent({ id, name, age }: Student) {
+  console.log(id, name, age)
+}
+createStudent({
+  id: 1,
+  name: 'Bob',
+  age: 18,
+} as Student);
+//Typeof 
+const MyArray = [
+  { name: "Alice", age: 15 },
+  { name: "Bob", age: 23 },
+  { name: "Eve", age: 38 },
+];
+
+type Person = typeof MyArray[number];
+
+type Person = {
+  name: string;
+  age: number;
+}
+type Age = typeof MyArray[number]["age"];
+
+type Age = number
+// Or
+type Age2 = Person["age"];
+
+type Age2 = number
+
+//key off
+
+function prop<T, K>(obj: T, key: K) {
+  return obj[key];
+}
+function prop<T, K extends keyof T>(obj: T, key: K) {
+  return obj[key];
+}
+let str = prop({ name: 'John' }, 'name');
+console.log(str);//John
+let str2 = prop({ name: 'John' }, 'age');
+console.log(str2);//John
+
+//error: Argument of type '"age"' is not assignable to parameter of type '"name"'.
 const x = new Calculator(10).add(5).result();
 
 const arr = [1, 2, 3, 4] as const;
