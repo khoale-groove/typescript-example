@@ -8,11 +8,13 @@ import React, {
 import { Text, TextProps as RNTextProps } from 'react-native';
 
 interface TextProps extends RNTextProps {
-  text: string;
+  text?: string;
 }
+
 export function TextField({ text }: TextProps) {
   const [first, setFirst] = useState<number>(0);
   const [second, setSecond] = useState<string>('😁');
+
   return <Text>{text + second}</Text>;
 }
 

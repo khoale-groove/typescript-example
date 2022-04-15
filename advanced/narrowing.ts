@@ -2,12 +2,11 @@
 
 export type Animal = {
   name: string;
-  legs?: number;
+  legs: number | undefined;
   canDoSomething: false;
 };
 
 // conditional logic
-
 function addLeg(animal: Animal): Animal {
   if (animal.legs === undefined) {
     return animal;
@@ -48,6 +47,11 @@ function addLeg1(thing: Person | Animal) {
  */
 
 function detect(thing: Person | Animal) {
+  // if(thing === ) {
+    // except
+  // }
+
+
   switch (thing.canDoSomething) {
     case true:
       return 'person';
@@ -58,3 +62,5 @@ function detect(thing: Person | Animal) {
       return anything;
   }
 }
+
+// detect('asdd');

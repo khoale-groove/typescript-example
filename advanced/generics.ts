@@ -17,13 +17,16 @@ export function basic() {
   function getFirstElementAny(arr: any[]): any {
     return arr[0];
   }
-  getFirstElementAny(['groove', 'technology', 'com', 1]);
+  getFirstElementAny(['groove', 'technology', 'com', 1]); // => number
   getFirstElementAny([1, 2, 3, { a: { b: 'c' } }]);
 
   // generic
-  function getFirstElementGeneric<T>(arr: T[]): T {
+  function getFirstElementGeneric<Type>(arr: Type[]): Type {
     return arr[0];
   }
+
+  const a = getFirstElementGeneric(['1', '2', 3]); 
+
 }
 
 // 2. Generic Interfaces and Classes
@@ -35,11 +38,11 @@ type PartialType<T> = {
 };
 
 function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
-  return obj[key];
+  return obj[key]; 
 }
 
 let x = { a: 1, b: 2, c: 3, d: 4 };
 getProperty(x, 'a');
-//   getProperty(x, 'm');
+  getProperty(x, 'm');
 
-let y: PartialType<typeof x> = { c: 4, d: 3 };
+let y: PartialType<typeof x> = { c: 4, d: 3, e: 3 };

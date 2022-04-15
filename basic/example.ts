@@ -1,8 +1,15 @@
 // Basic Types.
-const isDone: boolean = true;
+let isDone: boolean = true;
 const height: number = 6;
 const name: string = 'test';
 const list: number[] = [1, 2, 3]; // Also: `const list: Array<number> = [1, 2, 3]` which is using generics.
+
+isDone = 'abc';
+height = null;
+let isFalse = false;
+
+isDone = name;
+
 
 // Enums.
 enum Color {
@@ -10,12 +17,15 @@ enum Color {
   Green,
   Blue,
 }
-const c: Color = Color.Green;
+
+let c: Color = Color.Red;
+c = 'asda';
 
 // Any. Useful for those constiables that we have no idea about.
-const notSure: any = 4;
-notSure = 'maybe a string';
-notSure = false;
+let notSure: any = 4;
+
+
+
 
 const anotherList: any[] = [1, true, 'free']; // Mix `any` with other types.
 
@@ -25,9 +35,8 @@ function warnUser(): void {
 }
 
 // Function Declaration with Types.
-function add(a: number, b: number): number {
-  // return 'some string' //=> Error: Type 'string' is not assignable to type 'number'.
-  return a + b;
+function add(a: unknown, b: number): number {
+  return a.toString() + b;
 }
 
 // Optional Parameters.
@@ -213,9 +222,10 @@ function sum(a: number, b: number) {
   return a + b;
 }
 // ts: function sum(a: number, b: number): number
-function sum(a: number, b: number): number {
+function sum2(a: number, b: number): number {
   return a + b.toString();
 }
+const total = sum2(1, '2');
 
 function createStudent(id: number, name: string, age: number) {
   console.log(id, name, age)

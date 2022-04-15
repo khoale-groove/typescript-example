@@ -10,7 +10,7 @@ class User {
     this.name = name;
     this.sex = sex;
   }
-  updateBirthday(newDate: Date) {
+  updateBirthday(newDate: Date):void {
     this._birthday = newDate;
   }
 }
@@ -20,9 +20,10 @@ class User {
  */
 export function contructors() {
   class Admin extends User {}
-  const admin = new Admin('ADMIN', 'boy');
+  const admin = new Admin('ADMIN', 'other');
   admin.name; // => "ADMIN"
-  console.log(admin.name);
+  // admin.sex 
+  // console.log(admin.name);
 }
 
 /**
@@ -30,9 +31,10 @@ export function contructors() {
  */
 export function readonly() {
   const user = new User('userName', 'boy');
-  user.name = 'otherName';
+  user.name = 'adad';
   user.name; // => "otherName"
   console.log(user.name);
+  user.sex = "girl";
   // user.age = 30;
 }
 
@@ -97,8 +99,8 @@ export function memberVisibility() {
   }
   const teen = new Teenager('Nam');
   teen.firstName;
-  // teen.lastName
-  // teen.middleName
+  teen.lastName
+  teen.middleName
 }
 
 /**
