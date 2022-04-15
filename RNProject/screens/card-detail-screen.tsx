@@ -9,6 +9,7 @@ interface CardDetailScreenNavigationProp
   extends StackScreenProps<StackNavigatorParamList, 'cardDetailScreen'> {}
 
 function CardDetail(props: CardDetailScreenNavigationProp) {
+  // props.route.params.cardId
   return (
     <View style={styles.container}>
       <Text style={TEXT}>CardDetailScreen</Text>

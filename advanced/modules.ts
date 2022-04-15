@@ -1,5 +1,5 @@
 //  Modules in TypeScript
-// 1. syntax
+// syntax
 import hello from './hello';
 hello('name');
 //
@@ -9,5 +9,3 @@ welcome(john);
 import * as helloMethod from './hello';
 helloMethod.default('all');
 helloMethod.welcome('all');
-
-// strict

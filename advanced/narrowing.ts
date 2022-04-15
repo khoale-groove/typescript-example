@@ -1,17 +1,19 @@
 // move from a less precise type to a more precise type
 
-type Animal = {
+export type Animal = {
   name: string;
-  legs: number | undefined;
+  legs?: number;
   canDoSomething: false;
 };
 
-// function addLeg(animal: Animal) {
-//   animal.legs = animal.legs + 1;
-// }
+function addLeg(animal: Animal) {
+  // animal.legs = animal.legs + 1;
+}
+
+
 
 /**
- * typeof
+ * 1. typeof
  */
 function anotherMethodAddLeg(animal: Animal) {
   if (typeof animal.legs === 'number') {
@@ -20,7 +22,7 @@ function anotherMethodAddLeg(animal: Animal) {
 }
 
 /**
- * in
+ * 2. in
  */
 type Person = {
   name: string;
@@ -32,7 +34,7 @@ type Person = {
 function addLeg1(thing: Person | Animal) {
   if ('firstName' in thing) {
     thing.legs = 2;
-    // thing.firstName = 'name'
+    thing.firstName = 'name'
   }
 }
 

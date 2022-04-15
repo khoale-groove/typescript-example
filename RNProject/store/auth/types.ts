@@ -1,6 +1,6 @@
-import * as constants from './constants';
 import { AnyAction } from 'redux';
 
+// actions
 export type LoginPayloadType = {
   email: string;
   password: string;
@@ -22,7 +22,7 @@ export type UserInfoType = {
   accessToken: string;
 };
 
-//
+// reducers
 export interface AuthState {
   user: any;
   accessToken: string;

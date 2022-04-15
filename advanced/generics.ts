@@ -1,6 +1,6 @@
-//
 // 1. basic
-() => {
+
+export function basic() {
   //
   function getFirstElement(arr: string[]): string {
     return arr[0];
@@ -24,11 +24,11 @@
   function getFirstElementGeneric<T>(arr: T[]): T {
     return arr[0];
   }
-};
+}
 
 // 2. Generic Interfaces and Classes
 
-() => {
+export function interfaceAndClass() {
   interface MyInterface<T> {
     field: T;
   }
@@ -39,7 +39,7 @@
       this.field = field;
     }
   }
-};
+}
 
 // 3. Generic constraints
 

@@ -5,6 +5,8 @@ import { takeLatest } from 'redux-saga/effects';
 import { ActionType, LoginPayloadType, RegisterPayloadType } from './types';
 
 export function* loginSaga(action: ActionType<LoginPayloadType>) {
+  // action.type
+  // action.payload
   try {
     //
   } catch (error) {
@@ -13,6 +15,7 @@ export function* loginSaga(action: ActionType<LoginPayloadType>) {
 }
 
 export function* registerSaga(action: ActionType<RegisterPayloadType>) {
+  // action.payload.
   try {
     //
   } catch (error) {
